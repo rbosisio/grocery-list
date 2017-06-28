@@ -1,0 +1,16 @@
+{
+  "name": "grocery-list",
+  "version": "1.0.0",
+  "description": "A grocery list app made to learn nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Rodrigo Bosisio",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "express-load": "^1.1.16"
+  }
+}
