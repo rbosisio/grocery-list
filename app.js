@@ -1,5 +1,6 @@
 var app = require('./config/express')();
 
-app.listen(8000, '0.0.0.0', function() {
-	console.log("Server up!")
+var port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', function() {
+	console.log("Server up!");
 });
