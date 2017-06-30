@@ -5,4 +5,9 @@ angular.module('listhero', ['ngRoute'])
 			templateUrl: 'templates/home.html',
 			controller: 'HomeController'
 		});
+
+		$routeProvider.when('/list/:id', {
+			templateUrl: 'templates/list.html',
+			controller: 'ListController'
+		});
 	});

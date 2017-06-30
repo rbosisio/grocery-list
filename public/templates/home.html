@@ -1,11 +1,23 @@
 <div>
 	<h1>Lists</h1>
 	<hr>
-	<div ng-repeat="list in lists">
-		<p>Id : {{ list._id }}</p>
-		<p>Author : {{ list.author }}</p>
-		<ul>
-			<li ng-repeat="item in list.list">{{ item }}</li>
-		</ul>
+	<fieldset style="width: 400px;">
+		<legend>New List</legend>
+		<label for="author">Author</label>
+		<input type="text" name="author" size="20" ng-model="newList.author"/>
+		<label for="author">Tile</label>
+		<input type="text" name="title" size="20" ng-model="newList.title"/>
+		<button ng-click="addNewList()">ADD</button>
+	</fieldset>
+	<div style="width: 200px;">
+		<div ng-repeat="list in lists" ng-click="goToList(list._id)" style="cursor: pointer;">
+			<p>Id : {{ list._id }}</p>
+			<p>Title : {{ list.title }}</p>
+			<p>Author : {{ list.author }}</p>
+			<ul>
+				<li ng-repeat="item in list.items">{{ item }}</li>
+			</ul>
+			<hr>
+		</div>
 	</div>
 </div>
