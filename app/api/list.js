@@ -3,9 +3,9 @@ var api = {};
 var COUNT = 3
 
 var lists = [
-	{_id: 1, list: [], author: 'Rodrigo'},
-	{_id: 2, list: [], author: 'Dayse'},
-	{_id: 3, list: [], author: 'Baddock'}
+	{_id: 1, list: ['a', 'b', 'c'], author: 'Rodrigo'},
+	{_id: 2, list: ['d', 'e', 'f'], author: 'Dayse'},
+	{_id: 3, list: ['g', 'h', 'i'], author: 'Baddock'}
 ];
 
 api.listAll = function(req, res) {

@@ -1,0 +1,11 @@
+<div>
+	<h1>Lists</h1>
+	<hr>
+	<div ng-repeat="list in lists">
+		<p>Id : {{ list._id }}</p>
+		<p>Author : {{ list.author }}</p>
+		<ul>
+			<li ng-repeat="item in list.list">{{ item }}</li>
+		</ul>
+	</div>
+</div>
