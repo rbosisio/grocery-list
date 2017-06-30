@@ -1,16 +1,18 @@
 {
-  "name": "grocery-list",
+  "name": "list-hero",
   "version": "1.0.0",
-  "description": "A grocery list app made to learn nodejs",
-  "main": "index.js",
+  "description": "A list app made to learn nodejs",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node app.js",
+    "run": "nodemon app.js"
   },
   "author": "Rodrigo Bosisio",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.15.3",
-    "express-load": "^1.1.16"
+    "body-parser": "^1.17.2",
+    "consign": "^0.1.6",
+    "express": "^4.15.3"
   }
 }

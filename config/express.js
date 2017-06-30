@@ -1,11 +1,16 @@
 var express = require('express');
-var load = require('express-load')
+var consign = require('consign')
+var bodyParser = require('body-parser');
 
 module.exports = function() {
 	var app = express();
-	app.set('views','./app/views');
 
-	load('routes', {cwd: 'app'}).into(app);
+	app.use(bodyParser.json());
+
+	consign({cwd: 'app'})
+		.include('api')
+		.then('routes')
+		.into(app);
 
 	return app;
 }
