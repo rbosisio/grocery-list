@@ -1,7 +1,7 @@
 <div>
 	<h1>Lists</h1>
 	<hr>
-	<fieldset style="width: 200px;" ng-submit="addNewList()">
+	<fieldset style="width: 200px;">
 		<legend>New List</legend>
 		<label for="author">Tile</label>
         <input type="text" name="title" size="20" ng-model="newList.title"/>
@@ -9,7 +9,7 @@
 		<label for="author">Author</label>
 		<input type="text" name="author" size="20" ng-model="newList.author"/>
 		<br><br>
-		<input type="submit" value="ADD"/>
+		<button ng-click="addNewList()">ADD</button>
 	</fieldset>
 	<div style="width: 200px;">
 		<div ng-repeat="list in lists" ng-click="goToList(list._id)" style="cursor: pointer;">
