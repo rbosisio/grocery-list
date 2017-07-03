@@ -1,13 +1,15 @@
 <div>
 	<h1>Lists</h1>
 	<hr>
-	<fieldset style="width: 400px;">
+	<fieldset style="width: 200px;" ng-submit="addNewList()">
 		<legend>New List</legend>
+		<label for="author">Tile</label>
+        <input type="text" name="title" size="20" ng-model="newList.title"/>
+        <br><br>
 		<label for="author">Author</label>
 		<input type="text" name="author" size="20" ng-model="newList.author"/>
-		<label for="author">Tile</label>
-		<input type="text" name="title" size="20" ng-model="newList.title"/>
-		<button ng-click="addNewList()">ADD</button>
+		<br><br>
+		<input type="submit" value="ADD"/>
 	</fieldset>
 	<div style="width: 200px;">
 		<div ng-repeat="list in lists" ng-click="goToList(list._id)" style="cursor: pointer;">

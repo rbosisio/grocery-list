@@ -7,7 +7,7 @@
 		<p>Author : {{ list.author }}</p>
 		<p>Items:</p>
 		<ul>
-			<li ng-repeat="item in list.items">{{ item }} - <button ng-click="removeItem(item)">DEL</button></li>
+			<li ng-repeat="item in list.items track by $index">{{ item }} - <button ng-click="removeItem(item)">DEL</button></li>
 			<li><input type="text" name="item" size="20" ng-model="newItem" /><button ng-click="addItem()">ADD</button></li>
 		</ul>
 	</div>
