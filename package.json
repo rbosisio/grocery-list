@@ -5,9 +5,9 @@
   "main": "app.js",
   "engines" : { "node" : "6.11.1" },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js",
-    "run": "nodemon app.js"
+    "test": "",
+    "start": "export URL_DB=mongodb://hero:admin123@ds143892.mlab.com:43892/hero_db_dev  && node app.js",
+    "run": "export URL_DB=mongodb://hero:admin123@ds143892.mlab.com:43892/hero_db_dev && nodemon app.js"
   },
   "author": "Rodrigo Bosisio",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "body-parser": "^1.17.2",
     "consign": "^0.1.6",
     "express": "^4.15.3",
-    "mongoose": "^4.1.11"
+    "mongoose": "^4.1.11",
+    "jsonwebtoken": "^5.7.0"
   }
 }
