@@ -3,6 +3,6 @@ services:
   list-hero:
     build: .
     ports:
-      - "8000:8000"
+      - "3000:3000"
     volumes:
       - .:/var/list-hero/
