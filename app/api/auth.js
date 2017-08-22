@@ -18,10 +18,10 @@ api.authenticate = function(req, res) {
     }
     
     if (!user){
-      res.status(403).json({success: false, message:'Failed to log in'});
+      res.status(401).json({success: false, message:'Failed to log in'});
     } else {
       if (user.password != req.body.password) {
-        res.status(403).json({success: false, message:'Failed to log in'});
+        res.status(401).json({success: false, message:'Failed to log in'});
       } else {
         var token = jwt.sign(user, api.secret, {
           expiresIn:3600*24
@@ -37,12 +37,21 @@ api.isAuthorized = function(req, res, next){
   jwt.verify(req.get('x-access-token'), api.secret,
     function(err, token){
       if(err){
-        res.status(403).json({error: true, message: 'Access Denied!'})
+        res.status(401).json({error: true, message: 'Access Denied!'})
       } else {
         req.user = token._doc;
         next();
       }
     })
-}
+};
+
+api.isAdmin = function(req, res, next){
+  if(req.user.admin){
+    next();
+  } else {
+    res.status(403).json({error: true, message: 'Access Denied!'});
+  }
+};
+
 
 module.exports = api;

@@ -1,0 +1,52 @@
+<div>
+	<a ng-click="backToHome()" href="#"><< Home</a>
+	<h1>User: {{ user.login }} </h1>
+	<hr>
+	<div>
+		
+		<p>Lists:</p>
+		
+        <div ng-repeat="list in lists" ng-click="goToList(list._id)" style="cursor: pointer;width: 200px;">
+	    
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ list.title }}</h3>
+            </div>
+            <!--<div class="panel-body">-->
+            <!--    Panel content-->
+            <!--</div>-->
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in list.items track by $index">{{ item }}</li>
+            </ul>
+        </div>
+    </div>
+	
+	</div>
+	
+	<div ng-if="user.admin">
+		<p>Users:</p>
+		  <ul class="list-group">
+        <li class="list-group-item" ng-repeat="usr in users">
+          <span class="badge" ng-click="remove(usr._id)" style="cursor: pointer;">X</span>
+            {{ usr.login }}
+          </li>
+      </ul>
+  </div>
+	
+	<div ng-if="user.admin">
+		<p>Add User:</p>
+	  <form ng-submit="addUser()">
+	    <label for="login">
+	      Login:
+	    </label>
+      <input name="login" ng-model="newUser.login" type="text" />
+      <label for="password">
+	      Password:
+	    </label>
+      <input name="password" ng-model="newUser.password" type="password" />
+      <input name="submit" value="Submit" type="submit" />
+    </form>
+  </div>
+	
+	
+</div>

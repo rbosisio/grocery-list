@@ -16,6 +16,12 @@ angular.module('listhero', ['ngRoute', 'ngCookies'])
 			controller: 'LoginController'
 		});
 		
+		$routeProvider.when('/user/', {
+			templateUrl: 'partials/user.html',
+			controller: 'UserController'
+		});
+		
+		
 		$httpProvider.interceptors.push(function($q, $cookies, $location) {
       return {
       'request': function(config) {
@@ -29,7 +35,7 @@ angular.module('listhero', ['ngRoute', 'ngCookies'])
     
         'responseError': function(response) {
           console.log(response);
-          if (response.status == 403)
+          if (response.status == 401)
             $location.path('/login/');
           return response;
         }
