@@ -1,12 +1,14 @@
 module.exports = function(app) {
 	var api = app.api.list;
-
+  
+  var auth = app.api.auth;
+  
 	app.route('/api/v1/list')
-		.get(api.listAll)
-		.post(api.add);
+		.get(auth.isAuthorized, api.listAll)
+		.post(auth.isAuthorized, api.add);
 	
 	app.route('/api/v1/list/:id')
-		.get(api.getById)
-		.delete(api.remove)
-		.put(api.update);
+		.get(auth.isAuthorized, api.getById)
+		.delete(auth.isAuthorized, api.remove)
+		.put(auth.isAuthorized, api.update);
 }

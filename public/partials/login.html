@@ -1,0 +1,19 @@
+<div>
+	<a ng-click="backToHome()" href="#"><< Home</a>
+	<h1>Login</h1>
+	<hr>
+	<div>
+	  <h4 style="color: red;"> {{ error }}</h4>
+	  <form ng-submit="login()">
+	    <label for="login">
+	      Login:
+	    </label>
+      <input name="login" ng-model="credentials.login" type="text" />
+      <label for="password">
+	      Password:
+	    </label>
+      <input name="password" ng-model="credentials.password" type="password" />
+      <input name="submit" value="Submit" type="submit" />
+	  </form>
+  </div>
+</div>

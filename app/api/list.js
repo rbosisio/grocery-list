@@ -4,6 +4,7 @@ var api = {};
 var List = mongoose.model('List')
 
 api.listAll = function(req, res) {
+  console.log(req.user);
     List.find(function(err, lists){
         if (err) {
             console.log(err);
@@ -42,7 +43,7 @@ api.remove = function(req, res) {
 	        console.log(err);
             res.status(500).json(err);
 	    }
-	    res.sendStatus(204);    
+	    res.sendStatus(204);
 	});
 };
 

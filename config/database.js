@@ -12,4 +12,4 @@ mongoose.connection.on('connected', function() {
 
 mongoose.connection.on('error', function(error) {
     console.log('Database connection error: ' + error);
-});  
+});
