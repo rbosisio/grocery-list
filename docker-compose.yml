@@ -1,8 +1,8 @@
 version: '2'
 services:
-  grocery-list:
+  list-hero:
     build: .
     ports:
       - "8000:8000"
     volumes:
-      - .:/var/grocery-list/
+      - .:/var/list-hero/
