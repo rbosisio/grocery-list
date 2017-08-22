@@ -5,7 +5,7 @@ var List = mongoose.model('List')
 
 api.listAll = function(req, res) {
   console.log(req.user);
-    List.find(function(err, lists){
+    List.find({ user_id: req.user._id} ,function(err, lists){
         if (err) {
             console.log(err);
             res.status(500).json(err);
@@ -15,7 +15,7 @@ api.listAll = function(req, res) {
 };
 
 api.getById = function(req, res) {
-	var list = List.findOne({_id: req.params.id}, function(err, list){
+	var list = List.findOne({_id: req.params.id, user_id: req.user._id}, function(err, list){
 	    if (err) {
             console.log(err);
             res.status(500).json(err);
@@ -38,7 +38,7 @@ api.add = function(req, res) {
 };
 
 api.remove = function(req, res) {
-	List.remove({_id: req.params.id}, function(err){
+	List.remove({_id: req.params.id, user_id: req.user._id}, function(err){
 	    if (err){
 	        console.log(err);
             res.status(500).json(err);
@@ -48,7 +48,7 @@ api.remove = function(req, res) {
 };
 
 api.update = function(req, res) {
-	List.findOneAndUpdate({_id:req.params.id}, req.body, {new: true}, function(err, list){
+	List.findOneAndUpdate({_id:req.params.id, user_id: req.user._id}, req.body, {new: true}, function(err, list){
 	    if (err){
             console.log(err);
             res.status(500).json(err);

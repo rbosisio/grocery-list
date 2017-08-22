@@ -1,5 +1,5 @@
 angular.module('listhero')
-	.controller('HomeController', function($scope, $http, $location) {
+	.controller('HomeController', function($scope, $http, $location, $cookies) {
 		$http({
 			method: "GET",
 			url:'api/v1/list'
@@ -13,6 +13,7 @@ angular.module('listhero')
 		$scope.newList = {
 			author: "",
 			title: "",
+			user_id: $cookies.get('user_id'),
 			items: []
 		};
 

@@ -10,6 +10,10 @@ var schema = mongoose.Schema(
             type: String,
             required: false
         },
+        user_id: {
+            type: String,
+            required: true
+        },
         items: {
             type: Array,
             required: false,

@@ -17,8 +17,9 @@ angular.module('listhero')
 				var response = body.data;
 				console.log(response);
 				if (response.success){
-				  $cookies.put("token", response.token)
-				  $cookies.put("login", response.login)
+				  $cookies.put("token", response.token);
+				  $cookies.put("user_login", response.user.login);
+				  $cookies.put("user_id", response.user._id);
 				  $location.path('/');
 				} else {
 			    $scope.error = response.message;

@@ -27,7 +27,7 @@ api.authenticate = function(req, res) {
           expiresIn:3600*24
           
         });
-        res.status(200).json({success: true, token: token, login: user.login });
+        res.status(200).json({success: true, token: token, user: {login:user.login, _id:user._id }});
       }
     }
   });
