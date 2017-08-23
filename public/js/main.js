@@ -1,9 +1,9 @@
 angular.module('listhero', ['ngRoute', 'ngCookies'])
 	.config(function($routeProvider, $locationProvider,  $httpProvider) {
 
-		$routeProvider.when('/', {
-			templateUrl: 'partials/home.html',
-			controller: 'HomeController'
+		$routeProvider.when('/list/all', {
+			templateUrl: 'partials/all-lists.html',
+			controller: 'AllListsController'
 		});
 
 		$routeProvider.when('/list/:id', {

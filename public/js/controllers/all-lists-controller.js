@@ -1,5 +1,5 @@
 angular.module('listhero')
-	.controller('HomeController', function($scope, $http, $location, $cookies) {
+	.controller('AllListsController', function($scope, $http, $location, $cookies) {
 		$http({
 			method: "GET",
 			url:'api/v1/list'
