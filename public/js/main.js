@@ -1,6 +1,11 @@
 angular.module('listhero', ['ngRoute', 'ngCookies'])
 	.config(function($routeProvider, $locationProvider,  $httpProvider) {
 
+    $routeProvider.when('/', {
+			templateUrl: 'partials/home.html',
+			controller: 'HomeController'
+		});
+
 		$routeProvider.when('/list/all', {
 			templateUrl: 'partials/all-lists.html',
 			controller: 'AllListsController'
@@ -20,7 +25,6 @@ angular.module('listhero', ['ngRoute', 'ngCookies'])
 			templateUrl: 'partials/user.html',
 			controller: 'UserController'
 		});
-		
 		
 		$httpProvider.interceptors.push(function($q, $cookies, $location) {
       return {

@@ -1,5 +1,5 @@
 angular.module('listhero')
-	.controller('AllListsController', function($scope, $http, $location, $cookies) {
+	.controller('AllListsController', function($scope, $http, $location, $cookies, $rootScope) {
 		$http({
 			method: "GET",
 			url:'api/v1/list'
@@ -16,6 +16,8 @@ angular.module('listhero')
 			user_id: $cookies.get('user_id'),
 			items: []
 		};
+		
+		$rootScope.menuActivated = 'Lists';
 
 		$scope.goToList = function(id) { $location.path('/list/' + id); };
 

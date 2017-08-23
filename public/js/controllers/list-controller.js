@@ -1,15 +1,16 @@
 angular.module('listhero')
-	.controller('ListController', function($scope, $http, $routeParams, $location) {
+	.controller('ListController', function($scope, $http, $routeParams, $location, $rootScope) {
 		$http({
 			method: "GET",
 			url:'api/v1/list/' + $routeParams.id
 		}).then(function(body) {
-			console.log(body.data);
 			$scope.list = body.data;
 		}, function(erro) {
 			console.log(erro);
 		});
 		$scope.backToHome = function() { $location.path('/'); };
+		$rootScope.menuActivated = 'Lists';
+		
 		$scope.remove = function() {
 			$http({
 				method: "DELETE",

@@ -1,17 +1,16 @@
 angular.module('listhero')
-	.controller('UserController', function($scope, $http, $cookies, $location) {
+	.controller('UserController', function($scope, $http, $cookies, $location, $rootScope) {
+	  $rootScope.menuActivated = 'Users';
+	  
 		$http({
 			method: "GET",
 			url:'api/v1/user/' + $cookies.get('user_id')
 		}).then(function(body) {
-			console.log(body.data);
-			console.log("Entrou");
 			$scope.user = body.data;
 			$http({
   			method: "GET",
   			url:'api/v1/list'
   		  }).then(function(body) {
-  			  console.log(body.data);
   			  $scope.lists = body.data;
   		  }, function(erro) {
   		  	console.log(erro);

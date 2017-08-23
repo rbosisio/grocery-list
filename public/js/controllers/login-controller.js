@@ -1,5 +1,6 @@
 angular.module('listhero')
-	.controller('LoginController', function($scope, $http, $location, $cookies) {
+	.controller('LoginController', function($scope, $http, $location, $cookies, $rootScope) {
+	  $rootScope.menuActivated = 'Login';
 
     $scope.credentials = {
       login: "",
