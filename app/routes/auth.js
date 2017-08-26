@@ -4,4 +4,4 @@ module.exports = function(app) {
 	app.route('/api/v1/auth')
 		.post(api.authenticate);
 
-}
+};

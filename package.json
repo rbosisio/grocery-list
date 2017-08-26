@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "A list app made to learn nodejs",
   "main": "app.js",
-  "engines" : { "node" : "6.11.1" },
+  "engines": {
+    "node": "6.11.1"
+  },
   "scripts": {
     "test": "",
     "start": "export URL_DB=mongodb://hero:admin123@ds143892.mlab.com:43892/hero_db_dev  && node app.js",
@@ -17,5 +19,8 @@
     "express": "^4.15.3",
     "mongoose": "^4.1.11",
     "jsonwebtoken": "^5.7.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.5"
   }
 }

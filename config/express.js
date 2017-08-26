@@ -1,5 +1,5 @@
 var express = require('express');
-var consign = require('consign')
+var consign = require('consign');
 var bodyParser = require('body-parser');
 
 module.exports = function() {
@@ -15,4 +15,4 @@ module.exports = function() {
 		.into(app);
 
 	return app;
-}
+};

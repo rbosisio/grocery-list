@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var api = {};
 
-var User = mongoose.model('User')
+var User = mongoose.model('User');
 
 api.listAll = function(req, res) {
     User.find(function(err, users){
@@ -10,7 +10,7 @@ api.listAll = function(req, res) {
             res.status(500).json(err);
         }
         res.json(users);
-    } )
+    } );
 };
 
 api.getById = function(req, res) {
@@ -21,7 +21,7 @@ api.getById = function(req, res) {
         }
         res.json(user);
 	});
-	
+
 };
 
 api.add = function(req, res) {
@@ -33,7 +33,7 @@ api.add = function(req, res) {
         }
         res.json(user);
     });
-    
+
 };
 
 api.remove = function(req, res) {

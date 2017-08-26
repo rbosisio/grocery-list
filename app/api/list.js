@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var api = {};
 
-var List = mongoose.model('List')
+var List = mongoose.model('List');
 
 api.listAll = function(req, res) {
   console.log(req.user);
@@ -11,7 +11,7 @@ api.listAll = function(req, res) {
             res.status(500).json(err);
         }
         res.json(lists);
-    } )
+    } );
 };
 
 api.getById = function(req, res) {
@@ -22,7 +22,7 @@ api.getById = function(req, res) {
         }
         res.json(list);
 	});
-	
+
 };
 
 api.add = function(req, res) {
@@ -34,7 +34,7 @@ api.add = function(req, res) {
         }
         res.json(list);
     });
-    
+
 };
 
 api.remove = function(req, res) {
@@ -55,8 +55,8 @@ api.update = function(req, res) {
         }
         res.json(list);
 	});
-	
-	
+
+
 };
 
 module.exports = api;
